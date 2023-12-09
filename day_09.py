@@ -10,8 +10,6 @@ with open("input.txt","r") as f:
     inp = [extract_integers(line,True) for line in f.readlines()]
 
 def getDifferences(sequence):
-
-
 	if sum(sequence)==0 and [sequence[0]]*len(sequence)==sequence:
 		return 0
 	newSequence = []
