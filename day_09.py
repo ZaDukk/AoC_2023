@@ -19,5 +19,5 @@ def getDifferences(sequence):
 	return sequence[-1] + getDifferences(newSequence)
 
 
-print(f"p1: {sum(getDifferences(i) for i in inp)}")
-print(f"p2: {sum(getDifferences(i[::-1]) for i in inp)}")
+print(f"p1: {sum(getDifferences(line) for line in inp)}")
+print(f"p2: {sum(getDifferences(line[::-1]) for line in inp)}")
