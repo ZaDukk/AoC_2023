@@ -1,7 +1,7 @@
 
 from copy import deepcopy
 from itertools import count
-with open("test.txt","r") as f:
+with open("input.txt","r") as f:
     grid = [list(line.strip()) for line in f.readlines()]
 
 
