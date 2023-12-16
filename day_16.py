@@ -12,7 +12,6 @@ def beam(start,direction):
     seenStates = set()
     q.append(((start), (direction)))
     energized = set()
-    counter =0
 
     while q:
         (r,c),(dr,dc)=q.popleft()
@@ -75,11 +74,13 @@ def beam(start,direction):
             if (dr,dc) == dirs["left"] or (dr,dc) == dirs["right"]:
                 q.append(((nr,nc),dirs["up"]))
                 q.append(((nr,nc),dirs["down"]))
-        counter+=1
 
     return (len(energized) - 1)
 
 
 print(f"p1: {beam((0, -1), (0, 1))}")
-nums = [beam((-1,i),(1,0)) for i in range(len(grid[0]))]
+nums = [beam((-1,i),(1,0)) for i in range(len(grid[0]))]#top
+nums.extend([beam((i,-1),(0,1)) for i in range(len(grid[0]))])#left
+nums.extend([beam((i,len(grid)),(0,-1)) for i in range(len(grid))])#bottom
+nums.extend([beam((len(grid),i),(-1,0)) for i in range(len(grid[0]))])#right
 print(f"p2: {max(nums)}")
