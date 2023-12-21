@@ -57,7 +57,7 @@ def findPossibleTiles(grid, start, steps):
 
 
 def interpolateAndCalculateTiles(history, steps, width):
-    #find coeficents of ax^2 +bx + c using collected data about it
+    #find coeficents 
     c = history[0]
     b = history[1] - history[0]
     a = history[2] - history[1]
